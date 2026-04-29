@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+
+    <style>
+        :root {
+            --gold: #d4af37;
+            --cream: rgba(255, 253, 245, 0.9);
+            --text: #4a4a4a;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', serif;
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        /* Background Video */
+        #bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+            display: none;
+        }
+
+        /* Overlay 
+        #details-page::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--cream);
+            z-index: -1;
+        }
+
+        /* Cover Page */
+        #cover-page {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #fffdf5;
+            text-align: center;
+            transition: opacity 0.8s ease-in-out;
+        }
+
+        .image-button {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 5px solid var(--gold);
+            cursor: pointer;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .image-button:hover {
+            transform: scale(1.05);
+        }
+
+        .instruction {
+            margin-top: 20px;
+            font-style: italic;
+            color: var(--gold);
+            letter-spacing: 2px;
+        }
+
+        /* Details Page */
+        #details-page {
+            display: none;
+            min-height: 100vh;
+            padding: 40px 15px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .details-box {
+            max-width: 650px;
+            margin: auto;
+            line-height: 1.7;
+        }
+
+        h1 { font-size: 2.2rem; color: var(--gold); }
+        h2 { font-size: 1.4rem; }
+        h3, h4 { font-size: 1.2rem; margin-top: 20px; }
+        p { font-size: 1rem; }
+
+        hr {
+            width: 50%;
+            border: 1px solid var(--gold);
+            margin: 20px auto;
+        }
+
+        .venue-img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 10px;
+            border: 2px solid var(--gold);
+            margin-top: 10px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 600px) {
+            .image-button {
+                width: 170px;
+                height: 170px;
+            }
+
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.2rem; }
+            p { font-size: 0.95rem; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Background Video -->
+    <video id="bg-video" loop muted playsinline>
+        <source src="background-video.mp4" type="video/mp4">
+    </video>
+
+    <!-- Background Music -->
+    <audio id="bg-music" loop>
+        <source src="wedding-song.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Cover Page -->
+    <div id="cover-page">
+        <img src="AA.png" 
+             alt="Wedding Couple" 
+             class="image-button" 
+             onclick="showDetails()">
+        <p class="instruction">Tap the photo to open</p>
+    </div>
+
+    <!-- Details Page -->
+    <div id="details-page">
+        <div class="details-box">
+
+            <h1>Save the Date</h1>
+            <h2>Mrs. Abdul Salam</h2>
+
+            <p>With blessings from the elders, I invite you to celebrate the wedding of my cherished grandson.</p>
+
+            <p><strong>Mr. S MD Ashfaq B.Tech.,</strong></p>
+            <p>S/o Mr & Mrs. Janab Abdul Malik Sahab</p>
+
+            <p>with</p>
+
+            <p><strong>Ms. Arshiya Tarannum B.Com.,</strong></p>
+            <p>D/o Mr & Mrs. Janab Khateeb Abdullah Sahab</p>
+
+            <hr>
+
+            <h3>Nikah</h3>
+            <p>
+                On Thursday, 7th May 2026 (19 Dhu-al-Qaidah 1447 Hijri),<br>
+                at 5:30 PM in <strong>Masjid e Banubi</strong>, Gadda Street, Kurnool
+            </p>
+
+            <h4>Valima</h4>
+            <p>
+                On Thursday, 7th May 2026 (19 Dhu-al-Qaidah 1447 Hijri),<br>
+                at 8:30 PM in <strong>A.B.S Roshan Function Hall</strong>,  
+                Opp. Vijay Theatre, Zohrapuram, Kurnool
+            </p>
+
+            <p style="margin-top: 30px;"><strong>With Best Compliments From</strong></p>
+            <p>
+                Alhaj Khaleel Ahmed, K MD Ismail, Mohammed Ilyas,  
+                Mohammed Shahrukh Ahmed, Mohammed Musaib,  
+                Mohammed Saad Miqdad, Near & Dear
+            </p>
+
+        </div>
+
+        <!-- Venue 1 -->
+        <div style="margin: 30px 0;">
+            <p><strong>Masjid e Banubi</strong></p>
+            <a href="https://maps.app.goo.gl/HteathZNxcdVNU8U8" target="_blank">
+                <img src="masjid.png" class="venue-img">
+            </a>
+            <p style="font-size: 0.85rem;">(Tap image for directions)</p>
+        </div>
+
+        <!-- Venue 2 -->
+        <div style="margin: 30px 0;">
+            <p><strong>A.B.S Roshan Function Hall</strong></p>
+            <a href="https://maps.app.goo.gl/kyGTqWu35jh1jESq7" target="_blank">
+                <img src="function hall.png" class="venue-img">
+            </a>
+            <p style="font-size: 0.85rem;">(Tap image for directions)</p>
+        </div>
+
+    </div>
+
+    <!-- Script -->
+    <script>
+        function showDetails() {
+            const cover = document.getElementById('cover-page');
+            const details = document.getElementById('details-page');
+            const video = document.getElementById('bg-video');
+            const music = document.getElementById('bg-music');
+
+            // Show video
+            video.style.display = 'block';
+
+            // Play video
+            video.play().catch(() => {});
+
+            // Set volume and play music
+            music.volume = 0.4;
+            music.play().catch(() => {});
+
+            // Fade out cover
+            cover.style.opacity = '0';
+
+            setTimeout(() => {
+                cover.style.display = 'none';
+                details.style.display = 'block';
+
+                setTimeout(() => {
+                    details.style.opacity = '1';
+                }, 50);
+            }, 800);
+        }
+    </script>
+
+</body>
+</html>
